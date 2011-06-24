@@ -12,16 +12,17 @@ from anywhere in the room.
 
 To get the GreenScreen application itself, you can clone it from git:
 
-    $ git clone git://github.com/customink/greenscreen.git
+    $ git clone git://github.com/csamuel/greenscreen.git
 
 Or download the project by clicking on the 'download' link [on this page][dl].
 
-[dl]: https://github.com/customink/greenscreen
+[dl]: https://github.com/csamuel/greenscreen
 
 To install all of GreenScreen's dependencies, switch to its directory
 and do:
 
-    $ rake -f init.rakefile
+    $ gem install bundler
+	$ bundle install
 
 Once you've got GreenScreen on your machine, copy config.yml.sample to
 config.yml:
@@ -30,7 +31,7 @@ config.yml:
 
 And then edit the config.yml file to add links to your build servers.
 It contains instructions for how you can add the.  GreenScreen has
-been tested with Hudson, but can be used with any continuous
+been tested with Jenkins, but can be used with any continuous
 integration server that conforms to the [multiple project summary
 reporting standard][cc-xml].
 
@@ -61,12 +62,17 @@ screen.
 GreenScreen also includes a rackup file (`config.ru`) so you can
 deploy it under whichever rack-supporting webserver you like.
 
+## JRuby/Rack Configuration
+
+Also included in this version is a warbler configuration suitable for creating a standalone executable or a war for deploying to your favorite servlet container.
+
 ## Credits
 
 GreenScreen was original developed by [martinjandrews][mja].
 
 [mja]: https://github.com/martinjandrews/greenscreen/
 
-This version of GreenScreen is a fork of the updates made by [rsutphin][rs].
+This version of GreenScreen is a fork of the updates made by [rsutphin][rs] and [customink][customink].
 
 [rs]: https://github.com/rsutphin/greenscreen/
+[customink]: https://github.com/customink/greenscreen/
